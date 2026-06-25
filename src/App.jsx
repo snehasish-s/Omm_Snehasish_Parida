@@ -1,4 +1,5 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import DeployLoader from './components/DeployLoader';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -10,7 +11,11 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 export default function App() {
+  const [isDeploying, setIsDeploying] = useState(true);
+
   useEffect(() => {
+    if (isDeploying) return;
+    
     // Intersection Observer for scroll animations
     const observer = new IntersectionObserver(
       (entries) => {
@@ -38,19 +43,25 @@ export default function App() {
       observer.disconnect();
       clearTimeout(timer);
     };
-  }, []);
+  }, [isDeploying]);
 
   return (
     <>
-      <Navbar />
-      <Hero />
-      <About />
-      <Experience />
-      <Projects />
-      <Skills />
-      <Education />
-      <Contact />
-      <Footer />
+      {isDeploying && <DeployLoader onComplete={() => setIsDeploying(false)} />}
+      
+      {/* Only show the actual content if not deploying, or let it render underneath */}
+      <div style={{ opacity: isDeploying ? 0 : 1, transition: 'opacity 0.8s ease-in' }}>
+        <Navbar />
+        <Hero />
+        <About />
+        <Experience />
+        <Projects />
+        <Skills />
+        <Education />
+        <Contact />
+        <Footer />
+      </div>
     </>
   );
 }
+
