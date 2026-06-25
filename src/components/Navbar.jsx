@@ -53,7 +53,7 @@ export default function Navbar() {
           <li key={item.href}>
             <a
               href={item.href}
-              className={activeSection === item.href.slice(1) ? 'active' : ''}
+              className={`glitch-hover ${activeSection === item.href.slice(1) ? 'active' : ''}`}
               onClick={(e) => handleNavClick(e, item.href)}
             >
               {item.label}

@@ -9,6 +9,7 @@ import Skills from './components/Skills';
 import Education from './components/Education';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import LiveMetrics from './components/LiveMetrics';
 
 export default function App() {
   const [isDeploying, setIsDeploying] = useState(true);
@@ -60,6 +61,7 @@ export default function App() {
         <Education />
         <Contact />
         <Footer />
+        <LiveMetrics />
       </div>
     </>
   );
