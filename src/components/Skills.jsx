@@ -8,12 +8,10 @@ const skillCategories = [
       { name: 'IAM', dot: 'orange' },
       { name: 'EC2', dot: 'orange' },
       { name: 'CloudWatch', dot: 'orange' },
-      { name: 'Lambda', dot: 'orange' },
       { name: 'Docker', dot: 'blue' },
       { name: 'CI/CD', dot: 'green' },
       { name: 'Serverless', dot: 'purple' },
       { name: 'Cloud-native', dot: 'cyan' },
-      { name: 'Azure Basics', dot: 'blue' },
     ],
   },
   {
@@ -41,8 +39,6 @@ const skillCategories = [
       { name: 'Remote Sensing', dot: 'purple' },
       { name: 'NDVI Analysis', dot: 'green' },
       { name: 'Satellite Pipelines', dot: 'orange' },
-      { name: 'Flood Mapping', dot: 'blue' },
-      { name: 'Image Classification', dot: 'purple' },
     ],
   },
   {
@@ -52,10 +48,6 @@ const skillCategories = [
     skills: [
       { name: 'Git', dot: 'orange' },
       { name: 'Linux', dot: 'green' },
-      { name: 'IntelliJ IDEA', dot: 'purple' },
-      { name: 'System Design', dot: 'cyan' },
-      { name: 'OOP', dot: 'blue' },
-      { name: 'DSA', dot: 'red' },
       { name: 'Database Design', dot: 'blue' },
       { name: 'DBMS', dot: 'green' },
     ],
@@ -64,12 +56,12 @@ const skillCategories = [
 
 export default function Skills() {
   return (
-    <section className="section" id="skills" style={{ background: 'var(--bg-secondary)' }}>
+    <section className="section skills-section" id="skills">
       <div className="container">
-        <div className="section-header animate-on-scroll">
+        <div className="section-header brutal-reveal">
           <div className="section-label">Tech Stack</div>
           <h2 className="section-title">
-            Service <span className="gradient-text">Console</span>
+            Service <span className="accent">Console</span>
           </h2>
           <p className="section-subtitle">
             The cloud services, languages, and tools I deploy in production.
@@ -78,7 +70,7 @@ export default function Skills() {
 
         <div className="skills-console">
           {skillCategories.map((category, i) => (
-            <div key={i} className="skill-category animate-on-scroll" style={{ transitionDelay: `${i * 0.1}s` }}>
+            <div key={i} className="skill-category brutal-reveal" style={{ transitionDelay: `${i * 0.1}s` }}>
               <div className="skill-category-header">
                 <div className="skill-category-icon">{category.icon}</div>
                 <div className="skill-category-name">{category.name}</div>
@@ -86,7 +78,7 @@ export default function Skills() {
               </div>
               <div className="skill-items">
                 {category.skills.map((skill, j) => (
-                  <div key={j} className="skill-chip">
+                  <div key={j} className="skill-chip brutal-reveal" style={{ transitionDelay: `${j * 0.03}s` }}>
                     <span className={`skill-dot ${skill.dot}`} />
                     {skill.name}
                   </div>

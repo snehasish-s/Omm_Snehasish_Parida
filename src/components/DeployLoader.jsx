@@ -61,7 +61,7 @@ export default function DeployLoader({ onComplete }) {
         </div>
         
         <h2 className="loader-title">
-          Deploying <span className="gradient-text">Portfolio</span>
+          Deploying <span className="accent">Portfolio</span>
         </h2>
         
         <div className="loader-terminal">
@@ -74,12 +74,12 @@ export default function DeployLoader({ onComplete }) {
           <div className="terminal-body">
             {deploySteps.slice(0, currentStep + 1).map((step, idx) => (
               <div key={idx} className="terminal-line">
-                <span className="prompt">root@cloud-server:~$</span> {step}
+                <span className="prompt">omm@cloud-engineer ~ bash $</span> <span className={idx === currentStep ? 'cyber-glitch text-cyan' : ''} data-text={step}>{step}</span>
               </div>
             ))}
             {progress < 100 && (
               <div className="terminal-line">
-                <span className="prompt">root@cloud-server:~$</span> <span className="typing-cursor"></span>
+                <span className="prompt">omm@cloud-engineer ~ bash $</span> <span className="typing-cursor"></span>
               </div>
             )}
           </div>

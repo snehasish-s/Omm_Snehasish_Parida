@@ -13,22 +13,32 @@ export default function Education() {
     {
       icon: '🎯',
       title: 'BPUT Hackathon — Selected Presenter',
-      desc: 'Presented full-stack cloud-ready application at BPUT Rourkela.',
+      desc: 'Selected presenter at BPUT Rourkela for full-stack cloud-ready app.',
     },
+  ];
+
+  const certifications = [
+    {
+      icon: '☁️',
+      title: 'Preparing for Your Associate Cloud Engineer Journey',
+      issuer: 'Google Cloud & Coursera',
+      date: 'Jun 2026',
+      credentialId: 'OLUVQ3BYG1NF'
+    }
   ];
 
   return (
     <section className="section" id="education">
       <div className="container">
-        <div className="section-header animate-on-scroll">
+        <div className="section-header brutal-reveal">
           <div className="section-label">Background</div>
           <h2 className="section-title">
-            Education & <span className="gradient-text">Achievements</span>
+            Education & <span className="accent">Achievements</span>
           </h2>
         </div>
 
-        <div className="edu-awards-grid">
-          <div className="edu-card animate-on-scroll">
+        <div className="edu-awards-grid brutal-reveal delay-1">
+          <div className="edu-card brutal-reveal delay-2">
             <div className="edu-icon">🎓</div>
             <div className="edu-degree">B.Tech — Computer Science & Engineering</div>
             <div className="edu-school">Aryan Institute of Engineering & Technology</div>
@@ -40,16 +50,33 @@ export default function Education() {
           </div>
 
           <div className="awards-list">
+            <h3 className="section-label" style={{ marginBottom: '16px' }}>Awards</h3>
             {awards.map((award, i) => (
               <div
                 key={i}
-                className="award-card animate-on-scroll"
-                style={{ transitionDelay: `${i * 0.12}s` }}
+                className="award-card brutal-reveal"
+                style={{ transitionDelay: `${i * 0.1}s`, marginBottom: '16px' }}
               >
                 <div className="award-icon">{award.icon}</div>
                 <div>
                   <div className="award-title">{award.title}</div>
                   <div className="award-desc">{award.desc}</div>
+                </div>
+              </div>
+            ))}
+            
+            <h3 className="section-label" style={{ marginTop: '24px', marginBottom: '16px' }}>Certifications</h3>
+            {certifications.map((cert, i) => (
+              <div
+                key={i}
+                className="award-card brutal-reveal panel-acid"
+                style={{ transitionDelay: `${(i + awards.length) * 0.1}s`, marginBottom: '16px' }}
+              >
+                <div className="award-icon">{cert.icon}</div>
+                <div>
+                  <div className="award-title">{cert.title}</div>
+                  <div className="award-desc">{cert.issuer} · {cert.date}</div>
+                  <div className="award-desc" style={{ fontSize: '0.75rem', marginTop: '4px', color: 'var(--accent-cyan)' }}>Credential ID: {cert.credentialId}</div>
                 </div>
               </div>
             ))}

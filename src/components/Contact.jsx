@@ -2,17 +2,17 @@ export default function Contact() {
   return (
     <section className="section contact-section" id="contact">
       <div className="container">
-        <div className="contact-content animate-on-scroll">
+        <div className="contact-content brutal-reveal">
           <div className="section-label">Connect</div>
           <h2 className="contact-title">
-            Let's Build Something <span className="gradient-text">Cloud-Native</span>
+            Let's Build Something <span className="accent">Cloud-Native</span>
           </h2>
           <p className="contact-subtitle">
             Currently looking for cloud engineering and backend development opportunities.
             Let's connect and deploy something amazing together.
           </p>
 
-          <div className="contact-cards">
+          <div className="contact-cards brutal-reveal delay-1">
             <a href="mailto:ommsnehasishparidaa@gmail.com" className="contact-card" id="contact-email">
               <div className="contact-card-icon">📧</div>
               <div className="contact-card-label">Email</div>
@@ -36,13 +36,15 @@ export default function Contact() {
             </a>
           </div>
 
-          <a
-            href="mailto:ommsnehasishparidaa@gmail.com"
-            className="connect-btn"
-            id="connect-cta"
-          >
-            ☁ Deploy a Conversation →
-          </a>
+          <div className="connect-cta brutal-reveal delay-2">
+            <a
+              href="mailto:ommsnehasishparidaa@gmail.com"
+              className="connect-btn"
+              id="connect-cta"
+            >
+              ☁ Deploy a Conversation →
+            </a>
+          </div>
         </div>
       </div>
     </section>

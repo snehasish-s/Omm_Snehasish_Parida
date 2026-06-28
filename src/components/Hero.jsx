@@ -42,71 +42,74 @@ export default function Hero() {
     { label: 'Docker', cls: 'docker' },
     { label: 'Spring', cls: 'spring' },
     { label: 'Java', cls: 'java' },
+    { label: 'GIS', cls: 'gis' },
   ];
 
   return (
     <section className="hero" id="hero">
+      <div className="hero-bg-grid" />
+      <div className="hero-scanline" />
+      <div className="hero-noise" />
       <CloudCanvas />
-      <div className="hero-grid-overlay" />
-
-      {/* Floating service labels in background */}
-      <div className="floating-services">
-        {['S3', 'EC2', 'IAM', 'Lambda', 'RDS', 'ECS', 'SNS', 'SQS'].map((svc, i) => (
-          <div
-            key={svc}
-            className="floating-service"
-            style={{
-              left: `${10 + (i * 12) % 80}%`,
-              top: `${15 + (i * 17) % 70}%`,
-              color: i % 2 === 0 ? 'var(--aws-orange)' : 'var(--azure-blue)',
-              animationDelay: `${i * 2.5}s`,
-              animationDuration: `${15 + i * 3}s`,
-            }}
-          >
-            {svc}
-          </div>
-        ))}
-      </div>
 
       <div className="hero-content">
-        <div className="hero-badge">
+        <div className="hero-badge brutal-reveal">
           <span className="status-dot" />
-          Available for opportunities
+          Available for Opportunities
         </div>
 
-        <h1 className="hero-name">
-          Omm Snehasish<br />
-          <span className="gradient-text">Parida</span>
+        <h1 className="hero-name brutal-reveal delay-1">
+          <span className="cyber-glitch text-cyan" data-text="Omm Snehasish">Omm Snehasish</span><br />
+          <span className="accent cyber-glitch text-magenta" data-text="Parida">Parida</span>
         </h1>
 
-        <div className="hero-title-line">
+        <div className="hero-title-line brutal-reveal delay-2">
           <span className="hero-title">{displayText}</span>
           <span className="typing-cursor" />
         </div>
 
-        <p className="hero-description">
+        <p className="hero-description brutal-reveal delay-3">
           Building scalable cloud systems with production experience at{' '}
-          <strong style={{ color: 'var(--accent-orange)' }}>Tata Power Group</strong> and{' '}
-          <strong style={{ color: 'var(--accent-cyan)' }}>ISRO/NESAC, Dept. of Space, Govt. of India</strong>.
+          <strong>Tata Power Group</strong> and{' '}
+          <strong>ISRO/NESAC, Dept. of Space, Govt. of India</strong>.
           Crafting REST APIs, containerized microservices, and geospatial satellite data pipelines.
         </p>
 
-        <div className="hero-cloud-icons">
+        <div className="hero-stats-bar brutal-reveal delay-4">
+          <div className="stat-item">
+            <span className="stat-value">2+</span>
+            <span className="stat-label">Production Orgs</span>
+          </div>
+          <div className="stat-item">
+            <span className="stat-value">8.95</span>
+            <span className="stat-label">SGPA / 10</span>
+          </div>
+          <div className="stat-item">
+            <span className="stat-value">3</span>
+            <span className="stat-label">Hackathon Wins</span>
+          </div>
+          <div className="stat-item">
+            <span className="stat-value">∞</span>
+            <span className="stat-label">Scale</span>
+          </div>
+        </div>
+
+        <div className="hero-tech-cloud brutal-reveal delay-5">
           {cloudIcons.map(({ label, cls }) => (
-            <div key={label} className={`cloud-service-icon ${cls}`} title={label}>
+            <div key={label} className={`tech-pill ${cls}`} title={label}>
               {label}
             </div>
           ))}
         </div>
 
-        <div className="hero-actions">
-          <a href="#contact" className="btn-primary" onClick={(e) => {
+        <div className="hero-actions brutal-reveal delay-6">
+          <a href="#contact" className="btn btn-primary" onClick={(e) => {
             e.preventDefault();
             document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
           }}>
             ☁ Get in Touch
           </a>
-          <a href="#experience" className="btn-secondary" onClick={(e) => {
+          <a href="#experience" className="btn btn-secondary" onClick={(e) => {
             e.preventDefault();
             document.querySelector('#experience')?.scrollIntoView({ behavior: 'smooth' });
           }}>
@@ -115,7 +118,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="hero-scroll-indicator">
+      <div className="hero-scroll brutal-reveal delay-6">
         <div className="scroll-mouse">
           <div className="scroll-dot" />
         </div>

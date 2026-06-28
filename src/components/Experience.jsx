@@ -5,9 +5,8 @@ const experiences = [
     company: 'TPCODL — Tata Power Group',
     location: 'Bhubaneswar',
     points: [
-      'Built production-grade REST APIs (Java Spring Boot) for enterprise power distribution; containerised with Docker for CI/CD-ready deployment.',
-      'Integrated AWS S3 with IAM role-based access control; implemented CloudWatch-style health monitoring and anomaly alerting.',
-      'Architected decoupled microservices; participated in full SDLC — sprint planning, code review, API documentation.',
+      'Developed REST APIs using Java Spring Boot and containerized applications with Docker.',
+      'Worked on microservices, API documentation, and Agile software development practices.',
     ],
     tags: ['Java', 'Spring Boot', 'AWS S3', 'IAM', 'Docker', 'CloudWatch', 'REST APIs'],
   },
@@ -17,11 +16,9 @@ const experiences = [
     company: 'NESAC, Dept. of Space, Govt. of India',
     location: 'Northeast India',
     points: [
-      'Built satellite data pipelines and GIS-based disaster decision systems for national-level operational scenarios.',
-      'Analysed multi-temporal imagery (ResourceSat, Sentinel, MODIS) for flood mapping and disaster monitoring using cloud-integrated early warning APIs.',
-      'Processed and visualized geospatial datasets using Remote Sensing and GIS tools for environmental and disaster management applications.',
-      'Developed data preprocessing workflows for satellite imagery, including image correction, classification, and feature extraction techniques.',
-      'Collaborated with researchers and domain experts to generate geospatial insights for flood assessment and resource monitoring.',
+      'Developed GIS-based disaster monitoring solutions using satellite imagery.',
+      'Processed ResourceSat, Sentinel, and MODIS data for flood mapping and environmental analysis.',
+      'Built geospatial data processing workflows using Remote Sensing and GIS techniques.',
     ],
     tags: ['GIS', 'Remote Sensing', 'Satellite Data', 'NDVI', 'Python', 'Cloud APIs'],
   },
@@ -29,26 +26,28 @@ const experiences = [
 
 export default function Experience() {
   return (
-    <section className="section" id="experience" style={{ background: 'var(--bg-secondary)' }}>
+    <section className="section experience-section" id="experience">
       <div className="container">
-        <div className="section-header animate-on-scroll">
+        <div className="section-header brutal-reveal">
           <div className="section-label">Experience</div>
           <h2 className="section-title">
-            Where I've <span className="gradient-text">Deployed</span>
+            Where I've <span className="accent">Deployed</span>
           </h2>
           <p className="section-subtitle">
             Production experience at India's leading organizations — from power distribution to space technology.
           </p>
         </div>
 
-        <div className="experience-timeline">
+        <div className="experience-timeline brutal-reveal delay-1">
           {experiences.map((exp, i) => (
-            <div key={i} className="experience-item animate-on-scroll" style={{ transitionDelay: `${i * 0.15}s` }}>
+            <div key={i} className="experience-item brutal-reveal" style={{ transitionDelay: `${i * 0.15}s` }}>
               <div className="experience-dot" />
               <div className="experience-card">
-                <div className="experience-date">{exp.date}</div>
-                <h3 className="experience-role">{exp.role}</h3>
-                <div className="experience-company">{exp.company} · {exp.location}</div>
+                <div className="experience-meta">
+                  <span className="experience-date">{exp.date}</span>
+                  <h3 className="experience-role">{exp.role}</h3>
+                  <div className="experience-company">{exp.company} · {exp.location}</div>
+                </div>
                 <ul className="experience-points">
                   {exp.points.map((point, j) => (
                     <li key={j}>{point}</li>

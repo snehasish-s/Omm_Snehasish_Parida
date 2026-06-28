@@ -79,20 +79,20 @@ export default function InteractiveArchitecture() {
   return (
     <section className="section arch-sandbox-section" id="sandbox">
       <div className="container">
-        <div className="section-header animate-on-scroll">
+        <div className="section-header brutal-reveal">
           <div className="section-label">Interactive Sandbox</div>
           <h2 className="section-title">
-            Live <span className="gradient-text">Pipeline Simulator</span>
+            Live <span className="accent">Pipeline Simulator</span>
           </h2>
           <p className="section-subtitle">
-            Most portfolios just list projects. Experience the architecture I built at ISRO/NESAC live. 
+            Most portfolios just list projects. Experience the architecture I built at ISRO/NESAC live.
             Click the button below to ingest simulated satellite imagery through a serverless AWS pipeline.
           </p>
         </div>
 
-        <div className="sandbox-controls animate-on-scroll delay-1">
-          <button 
-            className={`btn-primary pipeline-btn ${pipelineRunning ? 'running' : ''}`}
+        <div className="sandbox-controls brutal-reveal delay-1">
+          <button
+            className={`btn btn-primary pipeline-btn ${pipelineRunning ? 'running' : ''}`}
             onClick={triggerPipeline}
             disabled={pipelineRunning}
           >
@@ -100,7 +100,7 @@ export default function InteractiveArchitecture() {
           </button>
         </div>
 
-        <div className="sandbox-canvas-wrapper animate-on-scroll delay-2" ref={containerRef}>
+        <div className="sandbox-canvas-wrapper brutal-reveal delay-2" ref={containerRef}>
           <div className="sandbox-canvas">
             {/* SVG Edges */}
             <svg className="sandbox-svg" viewBox="0 -50 1000 250" preserveAspectRatio="xMidYMid meet">

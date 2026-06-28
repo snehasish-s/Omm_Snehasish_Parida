@@ -30,7 +30,7 @@ export default function About() {
             i++;
             setVisibleLines(i);
             if (i >= terminalLines.length) clearInterval(interval);
-          }, 150);
+          }, 120);
         }
       },
       { threshold: 0.3 }
@@ -43,10 +43,10 @@ export default function About() {
   return (
     <section className="section" id="about" ref={sectionRef}>
       <div className="container">
-        <div className="section-header animate-on-scroll">
+        <div className="section-header brutal-reveal">
           <div className="section-label">About Me</div>
           <h2 className="section-title">
-            Deploying Solutions to the <span className="gradient-text">Cloud</span>
+            Deploying Solutions to the <span className="accent">Cloud</span>
           </h2>
           <p className="section-subtitle">
             From satellite data pipelines at ISRO to enterprise systems at Tata Power —
@@ -55,7 +55,7 @@ export default function About() {
         </div>
 
         <div className="about-grid">
-          <div className="about-text animate-on-scroll">
+          <div className="about-text brutal-reveal delay-1">
             <h3>Engineering at the Intersection of Cloud & Data</h3>
             <p>
               I'm a cloud-focused backend engineer with a passion for building robust, scalable
@@ -70,22 +70,22 @@ export default function About() {
             </p>
 
             <div className="about-stats">
-              <div className="stat-card">
-                <div className="stat-number">2+</div>
+              <div className="stat-block brutal-reveal delay-2">
+                <div className="stat-value">2+</div>
                 <div className="stat-label">Production Orgs</div>
               </div>
-              <div className="stat-card">
-                <div className="stat-number">8.95</div>
+              <div className="stat-block brutal-reveal delay-3">
+                <div className="stat-value">8.95</div>
                 <div className="stat-label">SGPA / 10</div>
               </div>
-              <div className="stat-card">
-                <div className="stat-number">3</div>
+              <div className="stat-block brutal-reveal delay-4">
+                <div className="stat-value">3</div>
                 <div className="stat-label">Hackathon Wins</div>
               </div>
             </div>
           </div>
 
-          <div className="terminal-window animate-on-scroll delay-2">
+          <div className="terminal-panel brutal-reveal delay-2">
             <div className="terminal-header">
               <div className="terminal-dot red" />
               <div className="terminal-dot yellow" />
@@ -97,7 +97,7 @@ export default function About() {
                 <div
                   key={i}
                   className="terminal-line"
-                  style={{ animationDelay: `${i * 0.08}s` }}
+                  style={{ animationDelay: `${i * 0.06}s` }}
                 >
                   {line.type === 'command' && (
                     <>
@@ -110,16 +110,18 @@ export default function About() {
                   )}
                   {line.type === 'json' && (
                     <span className="output">
-                      {'  '}<span className="key">{line.key}</span>
+                      {'  '}<span className="bracket">{'{'}</span>
+                      <span className="key">{line.key}</span>
                       <span className="output">: </span>
                       <span className="string">{line.value}</span>,
+                      <span className="bracket">{'}'}</span>
                     </span>
                   )}
                   {line.type === 'blank' && <br />}
                 </div>
               ))}
               {visibleLines >= terminalLines.length && (
-                <div className="terminal-line" style={{ animationDelay: '0.8s' }}>
+                <div className="terminal-line" style={{ animationDelay: '0.6s' }}>
                   <span className="prompt">omm@cloud:~$ </span>
                   <span className="typing-cursor" />
                 </div>
